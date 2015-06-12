@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/spark-master"/>
+	<classpathentry kind="lib" path="C:/Users/Mikołaj/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.google.code.gson"/>
+			<attribute name="maven.artifactId" value="gson"/>
+			<attribute name="maven.version" value="2.2.4"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="P:/jpa/bin/objectdb.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/medical-appointement-base"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
