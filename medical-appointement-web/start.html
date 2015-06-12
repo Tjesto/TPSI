@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html date-ng-app="medicalAppointement">
+<head>
+ <title>Twoja Wizyta</title>
+ <meta charset="utf-8" />
+ <link href="bootstrap.css" rel="stylesheet" />
+ <link href="bootstrap-theme.css" rel="stylesheet" />
+ <script src="angular.js"></script>
+ <script>
+	 var medicalAppointement = angular.module("medicalAppointement", []);
+	 alert("message");
+	 medicalAppointement.controller("medicalAppointementCtrl", function ($scope) {		 
+		 $scope.onSearch = function() {
+			alert("WTF")
+		 }
+	 });
+	 
+ </script>
+</head>
+<body ng-controller="medicalAppointementCtrl">
+ <div class="page-header">
+ <h1>Wyszukaj lekarzy w okolicy</h1>
+ </div>
+ <div class="panel">
+ <div class="input-group">
+ <h3>Miejscowość:</h3>	 
+ <input class="form-control" name="city" />
+ </div>
+ <div class="input-group">
+	 <h3>Specjalność:</h3>
+ <input class="form-control" name="speciality"/>
+ <span class="input-group-btn">
+ <button class="btn btn-default" ng-click="onSearch">Szukaj</button>
+ </span>
+ </div>
+</body>
+</html>
