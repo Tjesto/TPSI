@@ -1,0 +1,16 @@
+<div class="container" ng-controller="doctorCtrl">
+	<div class="row my-row">
+		<div class="col-xs-1"></div>
+		<div>
+			<p>{{ name }} {{ lastName }}</p></br>			
+			<p>{{ spec }}</p></br>
+		</div>
+		<div class="col-xs-5">			
+			<button class="btn btn-default btn-block" ng-click="getReservations()">Rezerwacje</button>
+		</div>	
+		<div class="col-xs-5">
+			<button class="btn btn-default btn-block" ng-click="getOpinions()">Opinie</button>
+		</div>
+		<div class="col-xs-1"></div>	
+	</div>
+</div>

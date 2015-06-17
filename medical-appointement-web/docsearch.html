@@ -1,14 +1,16 @@
 <div class="container">
  <div class="row my-row">
-	 <div class="col-xs-5">
-			Miasto: 
+  
+	 <div class="col-xs-5" id="inline">
+		
 			<br>
- 			<input class="form-control" ng-model="city"/>		 
+ 			<input class="form-control" placeholder="Miasto" ng-model="city"/>	
+           	 
 	 </div>
-	 <div class="col-xs-5">
-		Specializacja: 
+	 <div class="col-xs-5" id="inline">
+		
 		<br>
-		<input class="form-control" ng-model="spec"/>		 
+		<input class="form-control" placeholder="Specjalizacja" ng-model="spec"/>		 
 	 </div>
 	<br>
 	<div class="col-xs-2">
@@ -16,5 +18,6 @@
 	 		<button class="btn btn-default" ng-click="onSearch(city, spec)">Szukaj</button>
 		</span>
 	</div>
- </div>
+  </div>
+ 
 </div>

@@ -1,0 +1,112 @@
+body {
+ 
+  font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+   background-image: url("../img/s1.jpg");
+   background-size: cover;
+  
+}
+body > div > div > div > div.col-xs-2 > span > button,body > div > div > div > div > button {
+  
+  color: #FFF;
+  background: #00b5e5;
+  margin: 0 10px;
+  font-size: 18px;
+  width: 170px;
+  padding: 0;
+    text-decoration: none;
+      height: 38.4px;
+  line-height: 38.4px;
+    text-align: center;
+    border-radius: 3px;
+    shadow: none;
+   border-radius: 3px;
+}
+body > div > div > div > div> button {
+  
+  width: 300px;
+  display: inline;
+  float: left;
+   border-radius: 3px;
+  
+}
+
+body > div > div > div > div.col-xs-2 > span > button:hover  { background-color: #1478a9;; }
+#inline {
+  display: inline;
+  float:left; 
+  margin-right: 3%;
+  
+  
+  
+}
+#inline > input {
+  padding: 10px;
+  
+}
+body > div > div > div {
+  width: 60%;
+  text-align: center;
+  margin-left: 20%;
+  margin-top: 2%;
+  
+}
+input[type="date"] {
+     -webkit-align-items: center;
+     display: -webkit-inline-flex;
+     font-family: monospace;
+     overflow: hidden;
+     padding: 8px;
+     -webkit-padding-start: 1px;
+     display: inline;
+     float: left;
+     margin-right: 5px;
+     width: 250px;
+}
+
+
+
+input::-webkit-inner-spin-button { display: none; }
+body > div > div > div:nth-child(2) > table {
+  clear: both;
+
+  
+}
+body > div > div > div> table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+   
+}
+body > div > div > div:nth-child(2) > table > thead > tr {
+  margin-top: 10%;
+  position: absolute;
+
+}
+body > div > div > div:nth-child(4) > table > thead > tr {
+   margin-top: 10%;
+  position: absolute;
+
+  
+}
+th {
+  font-size: 1.4em;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #00B5E5;
+  color: #fff;
+    border: 1px solid #1478A9;
+  padding: 3px 69px 2px 7px;
+  border-radius: 3px;
+  
+}
+#sort, #sort1{
+  position: absolute;
+ 
+  
+}
+#sort1 {
+  margin-left: 25%;
+  
+}
