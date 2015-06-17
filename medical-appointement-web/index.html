@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="medicalApp">
+<head>
+ <title>Twoja Wizyta</title>
+ <meta charset="utf-8" />
+ <!--<link href="bootstrap.css" rel="stylesheet" />
+ <link href="bootstrap-theme.css" rel="stylesheet" /> -->
+ <!-- <script src="angular.js"></script> -->
+ <script src="./libs/angular.js"></script>
+ <script src="./libs/angular-route.js"></script>
+ <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script>
+	 var model = {doctors: null, appointements: []}
+	 var medicalAppointement = angular.module('medicalApp', ['ngRoute'])	 
+	 .filter("dataFilter", function(){
+		 return function(data, from, to){
+			 var filter = [];
+			 angular.forEach(data, function(item) {
+				 var start = new Date(item.date);
+				 var end = new Date(item.endDate)
+				 if ((start > from) && (end < to)) {
+					 filter.push(item);
+				 }				 
+			 });
+			 return filter;
+		 }
+	 })
+	 .config(['$routeProvider', function($routeProvider){
+		$routeProvider.
+			when('/main',
+				{templateUrl: 'docsearch.html',
+				controller: 'docsearchCtrl'}).
+			when('/doctors',
+				{templateUrl:'searchResults.html',
+				cotroller: 'searchResultCtrl'}).
+			when('/doctors/:id',
+				{templateUrl:'doctor.html',
+				cotroller: 'doctorCtrl'}).
+			when('/appointements/:id', 
+				{templateUrl:'docAppointements.html',
+				cotroller: 'docAppointementsCtrl'}).
+			when('/appointements/:id/:date',
+				{templateUrl:'docAppDetails.html',
+				cotroller: 'docAppDetailsCtrl'}).				
+			otherwise({redirectTo: '/main'});	 
+	 }])
+	 medicalAppointement.controller('docsearchCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+		 $scope.model = model;		 
+		 $scope.hasSpec = false;
+		 $scope.title = "Wyszukaj lekarzy w Twojej okolicy"			 	 
+		 $scope.onSearch = function(city, spec) {	
+			city = city.toLowerCase();
+			city = city.replace(/ą/g,'a');
+			city = city.replace(/ć/g,'c');
+			city = city.replace(/ę/g,'e');
+			city = city.replace(/ł/g,'l');
+			city = city.replace(/ń/g,'n');
+			city = city.replace(/ó/g,'o');
+			city = city.replace(/ś/g,'s');
+			city = city.replace(/ź/g,'z');
+			city = city.replace(/ż/g,'z');	
+			alert(city);		
+			var request = city;		 			
+			if (spec) {
+				spec = spec.toLowerCase();
+				spec = spec.replace(/ą/g,'a');
+				spec = spec.replace(/ć/g,'c');
+				spec = spec.replace(/ę/g,'e');
+				spec = spec.replace(/ł/g,'l');
+				spec = spec.replace(/ń/g,'n');
+				spec = spec.replace(/ó/g,'o');
+				spec = spec.replace(/ś/g,'s');
+				spec = spec.replace(/ź/g,'z');
+				spec = spec.replace(/ż/g,'z');
+				request = city+'/'+spec;
+				$scope.hasSpec = true;
+			}
+			$http.get("http://localhost:4567/doctors/" + request)
+			.success(function(response){
+				$scope.model.doctors = response;
+				$location.path("doctors");
+			})
+		 }
+	 }]);
+	 medicalAppointement.controller('searchResultCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+		 
+	 }]);
+	 
+ </script>
+</head>
+<body ng-app='medicalApp'>
+ 	<div ng-view></div>
+</body>
+</html>

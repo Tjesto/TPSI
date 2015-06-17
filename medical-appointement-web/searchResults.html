@@ -1,0 +1,59 @@
+ <div class="container">
+	 <div class="row my-row">
+		 <div class="col-xs-1"></div>
+		 <div class="col-xs-5">
+			 <input class="form-control" type="date" ng-model="start"/>
+		 </div>
+		 <div class="col-xs-5">
+			 <input class="form-control" type="date" ng-model="end"/>
+		 </div>
+		 <div class="col-xs-1"></div>
+	 </div>
+	 
+	 <div class="row">
+		<table class="table table-striped">
+			 <thead>
+			 	<tr>
+			 		<th>Imie</th>
+			 		<th>Nazwisko</th>
+					<th>Wolne terminy</th>
+			 	</tr>
+			 </thead>
+			 <tbody>
+				  <tr class="found" ng-repeat="doctor in model.doctors | orderBy:mySorter">
+				  	<td>{{doctor.firstName}}</td>
+				  	<td>{{doctor.lastName}}</td>
+					<td><button class="btn btn-default" ng-click="doctorAppointments(doctor.Id)">Umów wizytę na:</button></td>
+				  	<td><button class="btn btn-default" ng-click="doctorDetails(doctor.Id)">Szczegóły</button></td>
+				  </tr>
+			 </tbody>
+		</table>
+	 </div>
+	 
+	 <div class="row">
+		 <div class="col-xs-1"></div>
+		 <div class="col-xs-5">
+			 <button class="btn btn-default btn-block" ng-click="changeSorter(1)">Sortuj po liczbie dostępnych wizyt</button>
+		 </div>
+		 <div class="col-xs-5">
+			 <button class="btn btn-default btn-block" ng-click="changeSorter(2)">Sortuj po liczbie opinii</button>
+		 </div>
+		 <div class="col-xs-1"></div>
+	 </div>
+	 
+	 <div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th>Data rozpoczęcia</th>
+				<th>Data zakończenia</th>
+			</thead>
+			<tbody>
+				<tr class="found" ng-repeat="free in model.freeTime | dateFilter:start:end">
+					<!--<td>{{free.date}}</td>
+					<td>{{free.endDate}}</td>
+					<td><button class="btn btn-default" ng-click="makeAppointment(free)">Formularz</button></td>-->
+				</tr>
+			</tbody>
+		</table>
+	 </div>
+ </div>
